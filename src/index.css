@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ─── Base Backgrounds ─────────────────────────────── */
+  --color-base-950: #08090d;   /* deepest bg — near black with blue undertone */
+  --color-base-900: #0e1117;   /* primary bg */
+  --color-base-800: #161b26;   /* card / section bg */
+  --color-base-700: #1e2535;   /* elevated surfaces */
+  --color-base-600: #2a3347;   /* borders, dividers */
+  --color-cream: #fdf6ec;  
+
+  /* ─── Text ─────────────────────────────────────────── */
+  --color-text-primary:   #f0f2f7;   /* headings, bold text */
+  --color-text-secondary: #9aa3b8;   /* body text */
+  --color-text-muted:     #5a6479;   /* placeholders, captions */
+
+  /* ─── Accent — Electric Amber ───────────────────────── */
+  --color-accent-400: #ffd166;   /* hover states, highlights */
+  --color-accent-500: #f5a623;   /* primary accent — CTAs, links */
+  --color-accent-600: #d4861a;   /* pressed / active states */
+
+  /* ─── Secondary Accent — Ice Blue ───────────────────── */
+  --color-cool-400: #7eb8f7;   /* tags, badges, subtle highlights */
+  --color-cool-500: #4d9de0;   /* icons, secondary links */
+  --color-cool-600: #2d7cc1;   /* active secondary elements */
+
+  /* ─── Status Colors ─────────────────────────────────── */
+  --color-success: #3dd68c;
+  --color-warning: #f5a623;
+  --color-error:   #f2617a;
+  --color-info:    #4d9de0;
+
+
+  /* ─── Typography ─────────────────────────────────────── */
+  --font-display: 'Playfair Display', Georgia, serif;   /* headings */
+  --font-body:    'DM Sans', sans-serif;                /* body text */
+  --font-mono:    'JetBrains Mono', monospace;          /* code */
+
+  /* ─── Border Radius ──────────────────────────────────── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body{
+    background-color: var(--color-base-900);
+    color: var(--color-text-primary);
+    font-family: "Playfair Display", serif;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-base-800) 50%, transparent);
+    backdrop-filter: blur(16px);
+  }
+}
