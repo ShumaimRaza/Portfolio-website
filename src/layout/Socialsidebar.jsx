@@ -48,7 +48,7 @@ export default function SocialSidebar() {
   ];
 
   return (
-    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1">
+    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-1 hidden md:flex fixed left-6 top-1/2">
 
       {/* Top line */}
       <div className="w-px h-16 bg-gradient-to-b from-transparent to-gray-300 dark:to-base-600" />

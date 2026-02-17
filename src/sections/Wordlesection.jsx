@@ -187,8 +187,8 @@ export default function WordleSection() {
   ].slice(0, MAX_GUESSES);
 
   return (
-    <section id="wordle" className="relative z-10 py-24 px-6 transition-colors duration-300">
-      <div className="max-w-lg mx-auto flex flex-col items-center gap-8 bg-white dark:bg-transparent border border-gray-200 dark:border-transparent rounded-2xl p-8 shadow-sm dark:shadow-none transition-colors duration-300">
+    <section id="wordle" className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 bg-gray-100/60 dark:bg-transparent transition-colors duration-300">
+      <div className="max-w-lg mx-auto flex flex-col items-center gap-6 sm:gap-8 bg-white dark:bg-transparent border border-gray-200 dark:border-transparent rounded-2xl p-5 sm:p-8 shadow-sm dark:shadow-none transition-colors duration-300">
 
         {/* Header */}
         <div className="text-center">
@@ -228,7 +228,7 @@ export default function WordleSection() {
                 {Array.from({ length: wordLen }).map((_, i) => (
                   <div
                     key={i}
-                    className={`w-12 h-12 flex items-center justify-center rounded-lg text-lg font-bold uppercase
+                    className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg text-base sm:text-lg font-bold uppercase
                       ${i === 0
                         ? "bg-amber-400 dark:bg-accent-500 border-2 border-amber-400 dark:border-accent-500 text-white"
                         : "bg-transparent border-b-2 border-gray-400 dark:border-base-500 text-transparent"
@@ -260,7 +260,7 @@ export default function WordleSection() {
                     return (
                       <div
                         key={ci}
-                        className={`w-12 h-12 flex items-center justify-center rounded-lg font-bold text-lg uppercase transition-all duration-300
+                        className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg font-bold text-base sm:text-lg uppercase transition-all duration-300
                           ${getTileStyle(status, revealed, false)}
                           ${isCurrent ? "scale-105 border-amber-400 dark:border-accent-500" : ""}
                           ${ch && !revealed ? "border-gray-600 dark:border-base-400" : ""}
@@ -288,15 +288,17 @@ export default function WordleSection() {
             )}
 
             {/* On-screen Keyboard */}
-            <div className="flex flex-col items-center gap-1.5 w-full">
+            <div className="flex flex-col items-center gap-1 sm:gap-1.5 w-full">
               {KEYBOARD_ROWS.map((row, ri) => (
-                <div key={ri} className="flex gap-1.5 justify-center">
+                <div key={ri} className="flex gap-1 sm:gap-1.5 justify-center">
                   {row.map((key) => (
                     <button
                       key={key}
                       onClick={() => handleKey(key)}
-                      className={`h-12 rounded-lg border text-xs font-bold uppercase tracking-wide transition-all duration-150 active:scale-95
-                        ${key === "ENTER" || key === "⌫" ? "px-3 min-w-[52px]" : "w-9"}
+                      className={`h-12 sm:h-12 rounded-lg border font-bold uppercase tracking-wide transition-all duration-150 active:scale-95
+                        ${key === "ENTER" || key === "⌫"
+                          ? "px-1.5 sm:px-3 min-w-[40px] sm:min-w-[52px] text-[9px] sm:text-xs"
+                          : "w-7 sm:w-9 text-xs"}
                         ${getKeyStyle(key, letterStates)}
                       `}
                     >

@@ -26,12 +26,12 @@ export default function Navbar({ dark, setDark }) {
           <a
             href="/resume.pdf"
             download
-            className="group flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-text-primary transition-all duration-200 border border-transparent hover:border-gray-300 dark:hover:border-base-600 hover:bg-gray-100/80 dark:hover:bg-white/5 backdrop-blur-sm"
+            className="group flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-500 dark:text-text-secondary hover:text-gray-900 dark:hover:text-text-primary transition-all duration-200 border border-transparent hover:border-gray-300 dark:hover:border-base-600 hover:bg-gray-100/80 dark:hover:bg-white/5 backdrop-blur-sm px-3 sm:px-4"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
               <path d="M13 10h5l-6 6-6-6h5V3h2v7zm-9 9h16v-7h2v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-8h2v7z"/>
             </svg>
-            Resume
+            <span className="hidden sm:inline">Resume</span>
           </a>
 
           {/* Divider */}

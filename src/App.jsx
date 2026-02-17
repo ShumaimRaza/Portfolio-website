@@ -9,7 +9,7 @@ function App() {
   const [dark, setDark] = useState(() => {
     return localStorage.getItem("theme") !== "light";
   });
-
+  
   // Single source of truth for dark class
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
@@ -20,7 +20,7 @@ function App() {
       <AnimatedBackground dark={dark} />
       <SocialSidebar />
       <Navbar dark={dark} setDark={setDark} />
-      <main className="bg-cream dark:bg-base-900">
+      <main className="relative z-10 pt-16 px-4 sm:px-0">
         <Hero />
         <WordleSection/>
       </main>
