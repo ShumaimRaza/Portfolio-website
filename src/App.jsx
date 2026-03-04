@@ -4,6 +4,7 @@ import Hero from "./sections/Hero";
 import AnimatedBackground from "./layout/AnimatedBackground";
 import SocialSidebar from "./layout/Socialsidebar";
 import WordleSection from "./sections/Wordlesection";
+import ProjectsSection from "./sections/Projectssection";
 
 function App() {
   const [dark, setDark] = useState(() => {
@@ -22,6 +23,7 @@ function App() {
       <Navbar dark={dark} setDark={setDark} />
       <main className="relative z-10 pt-16 px-4 sm:px-0">
         <Hero />
+        <ProjectsSection />
         <WordleSection/>
       </main>
     </div>
